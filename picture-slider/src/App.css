@@ -14,11 +14,15 @@
 
 .inner-carousel {
   display: flex;
-  background-color: lightblue;
 }
 
 .carousel {
   cursor: grab;
   overflow: hidden;
-  background-color: rgb(230, 173, 173);
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
