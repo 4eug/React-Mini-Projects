@@ -2,7 +2,7 @@ import './App.css';
 import {useEffect, useState } from "react";
 import Movie from './Movies';
 import Filter from './Filter';
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion';
 
 function App() {
 
@@ -23,7 +23,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <motion.div layout className="App">
       <Filter
        popular={popular}
         setFiltered={setFiltered}
@@ -31,11 +31,13 @@ function App() {
           setActiveGenre={setActiveGenre}
           />
       <div className='popular-movies'>
+        <AnimatePresence>
         {filtered.map(movie => {
           return <Movie key={movie.id} movie={movie}/>
         })}
+        </AnimatePresence>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
