@@ -11,6 +11,10 @@ function App() {
         layout
         onClick={() => setIsOpen(!isOpen)}
         className="card"
+        style={{
+          borderRadius: "1rem",
+          boxShadow: "0px 10px 30px rgba(0,0,0,0.5)",
+        }}
       >
         <motion.div>
           <motion.h2 layout="position">Framer Motion</motion.h2>
