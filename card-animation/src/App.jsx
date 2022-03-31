@@ -17,9 +17,14 @@ function App() {
         }}
       >
         <motion.div>
-          <motion.h2 layout="position">Framer Motion</motion.h2>
+          <motion.h2 layout="position">Card Animation</motion.h2>
           {isOpen && (
-            <motion.div className="expand">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+              className="expand"
+            >
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Dolorem, culpa. Ea recusandae ducimus nesciunt est eum, odio
