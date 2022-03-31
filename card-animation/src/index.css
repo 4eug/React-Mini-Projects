@@ -28,3 +28,7 @@ body {
   padding-top: 1rem;
   line-height: 150%;
 }
+
+.expand {
+  width: 20rem;
+}

@@ -6,11 +6,16 @@ function App() {
 
   return (
     <div className="App">
-      <motion.div onClick={() => setIsOpen(!isOpen)} className="card">
+      <motion.div
+        transition={{ layout: { duration: 1, type: "spring" } }}
+        layout
+        onClick={() => setIsOpen(!isOpen)}
+        className="card"
+      >
         <motion.div>
-          <motion.h2>Framer Motion</motion.h2>
+          <motion.h2 layout="position">Framer Motion</motion.h2>
           {isOpen && (
-            <motion.div>
+            <motion.div className="expand">
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Dolorem, culpa. Ea recusandae ducimus nesciunt est eum, odio
