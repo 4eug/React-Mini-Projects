@@ -1,45 +1,32 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { useState } from "react";
+import { motion } from "framer-motion";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
+      <motion.div onClick={() => setIsOpen(!isOpen)} className="card">
+        <motion.div>
+          <motion.h2>Framer Motion</motion.h2>
+          {isOpen && (
+            <motion.div>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Dolorem, culpa. Ea recusandae ducimus nesciunt est eum, odio
+                beatae eligendi ullam consectetur eveniet cupiditate saepe
+                pariatur alias nobis non cum illum.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde,
+                quod.
+              </p>
+            </motion.div>
+          )}
+        </motion.div>
+      </motion.div>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
